@@ -159,7 +159,9 @@ export default function UserPage() {
                     {/* 별점/리뷰 정보가 있으면 표시, 없으면 상세보기 버튼 표시 */}
                     {(res.avg_rating || res.review_count) ? (
                         <div style={{fontSize:'0.9rem'}}>
-                            <span style={{color:'#fbc02d', fontWeight:'bold'}}>⭐ {res.avg_rating || 0.0}</span>
+                            <span style={{ color: '#fbc02d', fontWeight: 'bold' }}>
+                              ⭐ {Number(res.avg_rating ?? 0).toFixed(1)}
+                            </span>
                             <span style={{color:'#aaa', marginLeft:'5px'}}>({res.review_count || 0})</span>
                         </div>
                     ) : (
